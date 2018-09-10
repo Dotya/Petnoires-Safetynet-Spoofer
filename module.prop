@@ -1,7 +1,7 @@
-id=xiaomi-safetynet-fix
+id=universal-safetynet-fix
 name=Universal SafetyNet Fix
-version=v1.10.1
-versionCode=15
-author=Deiki
+version=v3-beta1 (Magisk v17 fix)
+versionCode=16
+author=Deiki,PetNoire
 description=Try to fix SafetyNet on devices with MIUI Developer/Beta ROM, CyanogenMod, Lineage OS, Resurrection Remix, etc.
-template=3
+minMagisk=17000

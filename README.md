@@ -1,8 +1,12 @@
 ## Universal SafetyNet Fix
-[More details in support thread](https://forum.xda-developers.com/apps/magisk/xiaomi-safetynet-fix-t3600431)  
+[More details in support thread](https://forum.xda-developers.com/editpost.php?do=updatepost&postid=77579853)  
 Fix SafetyNet on devices with MIUI Developer/Beta ROM, CyanogenMod, Lineage OS, Resurrection Remix, etc.
 
 ## Changelog
+#### v3
+- Rebuilt and reconfigured for magisk 17
+#### v2
+-
 #### v1.10.1
 - Fixed Magisk Hide detection for Magisk v12
 #### v1.10
