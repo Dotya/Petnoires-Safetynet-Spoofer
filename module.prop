@@ -1,7 +1,7 @@
-id=universal-safetynet-fix
-name=Universal SafetyNet Fix
-version=v3-beta1 (Magisk v17 fix)
+id=petnoires-safetyspoofer
+name=PetNoires SafetySpoofer
+version=v1-beta2
 versionCode=16
-author=Deiki,PetNoire
+author=PetNoire,Deiki
 description=Try to fix SafetyNet on devices with MIUI Developer/Beta ROM, CyanogenMod, Lineage OS, Resurrection Remix, etc.
 minMagisk=17000

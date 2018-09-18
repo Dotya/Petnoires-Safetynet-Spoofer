@@ -1,0 +1,41 @@
+#!/system/bin/sh
+
+function usage() {
+    [ "$(getprop persist.pnss.print)" ] && PRINT=$(getprop persist.pnss.print) || PRINT="default"
+    [ "$(getprop persist.pnss.appendage)" ] && APPENDAGE=$(getprop persist.pnss.appendage || APPENDAGE="default") || APPENDAGE="default"
+
+    echo "Universal SafetyNet Fix $(getprop persist.pnss.version) settings
+
+Usage: pnss <option> <value>
+
+Options:
+    set <finger/thumb> <value>
+        Set your own fingerprint or thumbprint value:
+            0:finger
+            1:thumb
+        Current: ${APPENDAGE} print: $PRINT
+
+    default
+        Use the included settings.
+
+    disable
+        Use your device settings."
+}
+
+function ask_reboot() {
+    echo "You need reboot to apply changes, reboot now? y/n"
+    read reboot_opt
+    [ "$reboot_opt" == "y" ] || [ "$reboot_opt" == "Y" ] && reboot
+}
+function convert_appendage() {
+    [ "$1" == "0" ] && APPENDAGE="finger"
+    [ "$1" == "1" ] && APPENDAGE="thumb"
+    echo $APPENDAGE
+}
+
+case "$1" in
+    set) setprop "persist.pnss.appendage" "$(convert_appendage "$2")" && setprop "persist.pnss.print" "$3" && ask_reboot;;
+    default) setprop "persist.pnss.appendage" "finger" && setprop "persist.pnss.print" "1" && ask_reboot;;
+    disable) setprop "persist.pnss.appendage" "0" && setprop "persist.pnss.print" "0" && ask_reboot;;
+    *) usage;;
+esac
